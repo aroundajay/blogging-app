@@ -40,6 +40,8 @@ To set up and run the project using Docker and Docker Compose, follow these step
 
 ### Cypress Integration Tests
 
+1. **Run the project with docker-compose:**
+
 #### CLI Version
 
 1. **Install dependencies:**
