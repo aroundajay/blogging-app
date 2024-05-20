@@ -36,7 +36,7 @@ COPY . .
 RUN composer install
 
 # Build frontend assets using Yarn
-RUN yarn && yarn build
+RUN yarn
 
 # Expose port 9000 and start PHP-FPM server
 EXPOSE 9000

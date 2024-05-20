@@ -1,8 +1,14 @@
 #!/bin/sh
 # startup-script.sh
 
-# Example command: migrate database
+# build the project
+yarn build
+
+# migrate database
 php artisan migrate
 
-# Start the default command
+# seed database
+php artisan db:seed
+
+# start the php-fpm process
 php-fpm
