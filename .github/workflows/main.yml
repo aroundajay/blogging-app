@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Unit & Integration Tests
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on: [push]
@@ -21,12 +21,11 @@ jobs:
       - name: Copy .env file
         run: cp .env.example .env
 
-      - name: Create Laravel log file if it doesn't exist
-        run: touch storage/logs/laravel.log
-      
-      - name: Adjust permissions for Laravel log file
-        run: chmod -R 777 storage/logs
-
+      - name: Create storage directories if they don't exist
+        run: |
+          chmod -R 777 storage/logs
+          chmod -R 777 storage/framework/views
+  
       - name: Install composer packages
         run: composer install
 
