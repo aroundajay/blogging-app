@@ -21,6 +21,12 @@ jobs:
       - name: Copy .env file
         run: cp .env.example .env
 
+      - name: Create Laravel log file if it doesn't exist
+        run: touch storage/logs/laravel.log
+      
+      - name: Adjust permissions for Laravel log file
+        run: chmod -R 777 storage/logs
+
       - name: Install composer packages
         run: composer install
 
@@ -43,6 +49,9 @@ jobs:
             sleep 5
           done
 
+      - name: Run PHPUnit tests
+        run: |
+          php artisan test
 
       - name: Run Cypress tests
         run: |
