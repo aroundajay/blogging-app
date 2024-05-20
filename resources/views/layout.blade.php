@@ -7,12 +7,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="top-right">
-        @if(auth()->check())
-            <a href="{{ route('logout') }}">Logout</a>
-        @else
-            <a href="{{ route('login.view') }}">Login</a>
-        @endif
+    <div class="navbar">
+        <div class="top-right">
+            <a href="/">Home</a>
+            @if(auth()->check())
+                <a href="{{ route('posts.index') }}">Posts</a>
+                <a href="{{ route('logout') }}">Logout</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+            @endif
+        </div>
     </div>
 
     @yield('content')

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\LoginRequest;
 use App\Services\Interfaces\AuthServiceInterface;
 
 use Exception;
@@ -19,17 +19,12 @@ class LoginController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke()
+    public function __invoke(LoginRequest $request)
     {
-        request()->validate([
-            'email' => 'required|email|exists:users,email',
-            'password' => 'required|string'
-        ]);
-
         try {
             $this->authService->login(
-                request('email'),
-                request('password')
+                $request->email,
+                $request->password
             );
         } catch (Exception $e) {
             return back()->withErrors([
@@ -37,6 +32,6 @@ class LoginController extends Controller
             ]);
         }
 
-        return redirect('/');
+        return redirect(route('posts.index'));
     }
 }

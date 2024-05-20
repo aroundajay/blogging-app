@@ -11,15 +11,15 @@ body, html {
 }
 
 .top-right {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+    float: right;
 }
 
 .top-right a {
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .top-right a:hover {
@@ -92,4 +92,66 @@ button:hover {
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px;
+    height: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Blog post styles */
+.blog-posts {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-post {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.blog-post p {
+    margin-bottom: 10px;
+}
+
+.blog-post small {
+    color: #666;
+}
+
+.post-form {
+    width: 60%;
+}
+
+.content-textarea {
+    width:100%;
+}
+
+.post-edit-delete-btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.post-btn {
+    margin-bottom: 10px;
 }

@@ -29,7 +29,7 @@ class AuthTest extends TestCase
         ]);
 
         // Assert
-        $response->assertRedirect('/');
+        $response->assertRedirect('/posts');
         $this->assertAuthenticatedAs($user);
     }
 
