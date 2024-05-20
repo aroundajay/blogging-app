@@ -34,7 +34,7 @@ jobs:
       - name: Wait for the app to be ready
         run: |
           # Adjust the waiting time or the check method according to your app's specifics
-          while ! curl -k -s https://localhost > /dev/null; do
+          until [[ "$(curl -k -s -o /dev/null -w ''%{http_code}'' https://localhost)" == "200" ]]; do
             echo "Waiting for the app to be ready..."
             sleep 5
           done
