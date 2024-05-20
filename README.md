@@ -7,7 +7,7 @@ This application is a feature-rich blog platform built with Laravel 11, MySQL 8,
 - **User Authentication**: Secure user login and logout functionality.
 - **Blog Post Management**: Create, Read, Update, and Delete blog posts.
 - **User Authorization**: Users can only modify or delete their own blog posts.
-- **Responsive Home Page**: A home page that displays all blog posts.
+- **Home Page**: A home page that displays all blog posts.
 
 ## Getting Started
 
