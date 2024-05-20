@@ -4,10 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Services\AuthService;
-use App\Services\Interfaces\AuthServiceInterface;
+use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Repositories\UserRepository;
 
-class AppServiceProvider extends ServiceProvider
+class RepositoryServiceProvider extends ServiceProvider
 {
     /**
      * All of the container bindings that should be registered.
@@ -15,11 +15,11 @@ class AppServiceProvider extends ServiceProvider
      * @var array
      */
     public $bindings = [
-        AuthServiceInterface::class => AuthService::class
+        UserRepositoryInterface::class => UserRepository::class,
     ];
 
     /**
-     * Register any application services.
+     * Register services.
      */
     public function register(): void
     {
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      */
     public function boot(): void
     {
