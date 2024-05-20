@@ -16,6 +16,12 @@ jobs:
       - name: Copy .env file
         run: cp .env.example .env
 
+      - name: Install composer packages
+        run: composer install
+
+      - name: Install npm packages
+        run: yarn
+
       - name: Build and run Docker Compose
         run: |
           docker-compose up -d --build
