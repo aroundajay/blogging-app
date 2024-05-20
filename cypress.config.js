@@ -6,7 +6,7 @@ export default defineConfig({
     chromeWebSecurity: false,
     retries: 2,
     defaultCommandTimeout: 5000,
-    watchForFileChanges: false,
+    watchForFileChanges: true,
     videosFolder: 'tests/cypress/videos',
     screenshotsFolder: 'tests/cypress/screenshots',
     fixturesFolder: 'tests/cypress/fixture',
@@ -14,7 +14,7 @@ export default defineConfig({
         setupNodeEvents(on, config) {
             return setupNodeEvents(on, config)
         },
-        baseUrl: 'http://localhost',
+        baseUrl: 'https://localhost',
         specPattern: 'tests/cypress/integration/**/*.cy.{js,jsx,ts,tsx}',
         supportFile: 'tests/cypress/support/index.js',
     },
