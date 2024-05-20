@@ -1,0 +1,38 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on: [push]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Copy .env file
+        run: cp .env.example .env
+
+      - name: Build and run Docker Compose
+        run: |
+          docker-compose up -d --build
+
+      - name: Wait for the app to be ready
+        run: |
+          # Adjust the waiting time or the check method according to your app's specifics
+          while ! curl -s https://localhost > /dev/null; do
+            echo "Waiting for the app to be ready..."
+            sleep 5
+          done
+
+      - name: Run Cypress tests
+        run: |
+          npx cypress run
+
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
