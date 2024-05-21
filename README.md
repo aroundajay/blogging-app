@@ -25,6 +25,10 @@ To set up and run the project using Docker and Docker Compose, follow these step
    ```
 3. **[https] Access the application at https://localhost**
 
+4. **Test User Credentials:**
+    - test@example.com
+    - password
+
 ## Running Tests
 
 ### PHPUnit Unit Tests
