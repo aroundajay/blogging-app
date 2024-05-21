@@ -23,6 +23,7 @@ To set up and run the project using Docker and Docker Compose, follow these step
    ```sh
    docker-compose up
    ```
+3. **[https] Access the application at https://localhost**
 
 ## Running Tests
 
